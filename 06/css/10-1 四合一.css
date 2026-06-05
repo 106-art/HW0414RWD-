@@ -1,0 +1,393 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.all {
+    /* background-color: aqua; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+@media(max-width:1200px) {
+
+    .all {
+        flex-direction: column;
+    }
+}
+
+.nav {
+    background-color: burlywood;
+    width: 366px;
+    height: 100%;
+
+    flex-shrink: 0;
+    padding: 80px 70px;
+}
+
+@media(max-width:1200px) {
+    .nav {
+        width: 100%;
+        height: 100px;
+        padding: 10px 20px;
+
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+}
+
+/* @media(max-width:640px) {
+    .nav {
+        position: relative;
+    }
+} */
+
+.logo {
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-bottom: 50px;
+
+    background-image: url(../圖片img/11阿尼亞.png);
+    background-size: cover;
+    transition: 1s;
+}
+
+@media(max-width:1200px) {
+    .logo {
+        width: 80px;
+        height: 80px;
+        margin: unset;
+    }
+}
+
+@media(max-width:640px) {
+    .logo {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.logo:hover {
+    transform: scale(0.8) rotateY(180deg);
+    transition: 1s;
+}
+
+@media(max-width:640px) {
+    .logo:hover {
+        transform: translate(-50%, -50%) scale(0.8) rotateY(180deg);
+        transition: 0.5s;
+    }
+}
+
+
+.nav-btn-all {
+    /* background-color: blueviolet; */
+    width: 100%;
+    /* height: 150px; */
+}
+
+@media(max-width:1200px) {
+    .nav-btn-all {
+        width: auto;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+}
+
+@media(max-width:640px) {
+    .nav-btn-all {
+        display: none;
+    }
+}
+
+.nav-btn {
+    background-color: bisque;
+    width: auto;
+    height: 70px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    font-size: 32px;
+    border-radius: 20px;
+    color: black;
+
+    text-shadow: 1px 0px 0px rgb(29, 8, 103);
+    border: 2px inset rgb(177, 80, 80);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+
+}
+
+@media(max-width:1200px) {
+    .nav-btn {
+        width: auto;
+        padding: 0px 10px;
+        /* margin-bottom: unset; */
+        margin-left: 10px;
+        margin: 0;
+    }
+}
+
+.nav-btn:hover {
+    color: brown;
+    background-color: rgb(199, 131, 154);
+    box-shadow: inset 1px 1px 5px 1px yellow;
+}
+
+.nav-btn:active {
+    transform: scale(0.9);
+    background-color: goldenrod;
+    opacity: 0.5;
+}
+
+.nav-btn-all div {
+    color: darkolivegreen;
+    line-height: 1;
+    font-size: large;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    background-color: rgb(218, 108, 108);
+    /* 傳統作法如下 */
+    /* width: calc(100% - 366px); */
+    width: 100%;
+    height: 100%;
+    /* 把右邊剩餘的給他 */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    /* background-color: yellow; */
+    width: 957px;
+    height: 570px;
+    justify-content: space-between;
+    display: flex;
+
+
+}
+
+@media (max-width:1380px) {
+    .content {
+        width: 800px;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+}
+
+@media (max-width:1200px) {
+    .content {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+@media (max-width:640px) {
+    .content {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.img {
+    background-color: gray;
+    /* 扣掉兩個空隙 再分給三張圖 */
+    width: calc((100% - 10px*2)/3);
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    transition: 1s;
+
+}
+
+@media(max-width:1380px) {
+    .img {
+        height: calc((100% - 10px)/2);
+    }
+}
+
+.img:hover {
+    transform: rotateY(180deg);
+    transition: 1s;
+}
+
+.img-1 {
+    background-color: blueviolet;
+    background-image: url(../圖片img/15游泳png.png);
+    /* width: 50%; */
+}
+
+.img-2 {
+    background-color: goldenrod;
+    background-image: url(../圖片img/14滑雪png.png);
+    /* margin: 0 10px; */
+    /* width: 50%; */
+}
+
+.img-3 {
+    background-color: aquamarine;
+    /* ../現在這個位置的外層 */
+    /* ./現在這個位置 */
+    background-image: url(../圖片img/13運動.jpg);
+    /* width: 50%; */
+}
+
+@media(max-width:1380px) {
+    .img-1 {
+        width: 100%;
+        background-position: 0 38%;
+    }
+
+    .img-2,
+    .img-3 {
+        width: calc(50% - 5px);
+    }
+
+}
+
+@media(max-width:640px) {
+    .img {
+        width: 100%;
+        height: calc(100% / 3);
+    }
+
+    /* .img-1 {
+        width: 100%;
+        height: calc(100%/3);
+    }
+
+    .img-2 {
+        width: 100%;
+        height: calc(100%/3);
+        background-position: 0 43%;
+    }
+
+    .img-3 {
+        width: 100%;
+        height: calc(100%/3);
+        background-position: 0 47%;
+    } */
+
+}
+
+/* =============漢堡按鈕============= */
+.ham-label {
+    /* background-color: aqua; */
+    width: 90px;
+    height: 90px;
+
+    /* 因為label是行内元素 無法定大小  */
+    /* 要變更顯示模式=>區塊元素 */
+    /* display: block; */
+    /* 一開始先隱藏 */
+    display: none;
+    position: relative;
+    cursor:pointer;
+}
+
+@media(max-width:640px) {
+    .ham-label {
+        display: block;
+    }
+}
+
+/* xxx yyy=>xxx後代yyy
+        空格代表後代 */
+.ham-label .line {
+    background-color: black;
+    width: 80%;
+    height: 10px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 1s;
+}
+
+.ham-label .line-1 {
+    top: 25%;
+}
+
+.ham-label .line-2 {
+    top: 50%;
+}
+
+.ham-label .line-3 {
+    top: 75%;
+}
+
+/* 移到正中央再下去旋轉 */
+#ham-switch:checked+label .line-1 {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+
+}
+
+/* checked被按下去 */
+/* A+B "+"跟後面第一個兄弟姊妹 */
+/* 空格 後代 */
+#ham-switch:checked+label .line-2 {
+    /* none隱藏消失 */
+    display: none;
+}
+
+
+#ham-switch:checked+label .line-3 {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media(max-width:640px) {
+    a {
+        width: 100%;
+    }
+
+    .nav-btn-all {
+        width: 100%;
+        flex-wrap: wrap;
+        position: absolute;
+        top: 100px;
+        left: 0;
+    }
+
+    .nav-btn {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    #ham-switch:checked~.nav-btn-all {
+        display: flex;
+    }
+
+}
+
+/* =============漢堡按鈕============= */
